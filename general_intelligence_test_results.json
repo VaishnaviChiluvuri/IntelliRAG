@@ -1,0 +1,218 @@
+[
+  {
+    "test_number": 1,
+    "category": "1. Simple General Knowledge",
+    "original_question": "What is the capital of Australia?",
+    "cleaned_question": "What is the capital of Australia?",
+    "intent": "GENERAL_KNOWLEDGE",
+    "knowledge_source": "General Technical Knowledge (Gemini)",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 1.0,
+    "support_level": "Strong support",
+    "num_steps": 1,
+    "final_answer": "The capital of Australia is Canberra [External Knowledge (Wikipedia)]. Located in the northern part of the Australian Capital Territory (ACT) in southeastern Australia, Canberra was specifically selected and built as a planned city to serve as the nation's federal seat of government [External Knowledge (Wikipedia)]. Today, it is home to critical national institutions, including the Parliament of Australia and the High Court of Australia [External Knowledge (Wikipedia)].",
+    "citations": [
+      "[External Knowledge (Wikipedia): Australian Capital Territory]"
+    ],
+    "external_citations": [
+      "Australian Capital Territory"
+    ],
+    "latency_seconds": 9.73
+  },
+  {
+    "test_number": 2,
+    "category": "2. Computer Science and AI/ML",
+    "original_question": "Explain the difference between supervised and unsupervised learning in machine learning.",
+    "cleaned_question": "Explain the difference between supervised and unsupervised learning in machine learning.",
+    "intent": "GENERAL_KNOWLEDGE",
+    "knowledge_source": "General Technical Knowledge (Gemini)",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 1.0,
+    "support_level": "Strong support",
+    "num_steps": 1,
+    "final_answer": "In machine learning, **supervised learning** and **unsupervised learning** are two fundamental paradigms that differ primarily in the availability of data labels and the goals of the algorithms. \n\n### Supervised Learning\nIn supervised learning, an algorithm is trained on a *labeled dataset*. This means that every input data point provided to the model is paired with a corresponding correct output or \"ground truth\" target value. The primary goal is for the model to learn the mapping function between the inputs and the outputs so that it can accurately predict outcomes for new, unseen data. \n\nSupervised learning is generally divided into two main categories of tasks:\n* **Classification:** Predicting a discrete class label or category (e.g., determining whether an email is \"spam\" or \"not spam\").\n* **Regression:** Predicting a continuous numerical value (e.g., predicting a house's selling price based on its square footage and location).\n\n### Unsupervised Learning\nIn contrast, unsupervised learning utilizes *unlabeled data*. During training, the algorithm receives no hints, correct answers, or human supervision. Instead, the system must independently analyze the data to discover hidden patterns, underlying structures, or intrinsic groupings without any prior guidance. \n\nUnsupervised learning is commonly used for:\n* **Clustering:** Grouping similar data points together based on shared characteristics (e.g., customer segmentation for targeted marketing).\n* **Association:** Discovering rules that describe large portions of data (e.g., market basket analysis showing products frequently bought together).\n* **Dimensionality Reduction:** Simplifying data by reducing the number of random variables under consideration while preserving critical information.\n\n### Summary of Key Differences\n* **Data:** Supervised learning uses labeled data (inputs + correct outputs), whereas unsupervised learning uses unlabeled data (inputs only).\n* **Objective:** Supervised learning aims to predict outcomes or classify inputs, while unsupervised learning aims to discover hidden structures or patterns within the data.\n* **Human Oversight:** Supervised learning requires heavy human intervention to label the training data accurately, whereas unsupervised learning is fully automated in finding relationships.",
+    "citations": [
+      "[External Knowledge (Wikipedia): Self-supervised learning]"
+    ],
+    "external_citations": [
+      "Self-supervised learning"
+    ],
+    "latency_seconds": 19.42
+  },
+  {
+    "test_number": 3,
+    "category": "3. Technical Explanations",
+    "original_question": "How does the TCP three-way handshake establish a reliable connection?",
+    "cleaned_question": "How does the TCP three-way handshake establish a reliable connection?",
+    "intent": "GENERAL_KNOWLEDGE",
+    "knowledge_source": "General Technical Knowledge (Gemini)",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 1.0,
+    "support_level": "Strong support",
+    "num_steps": 1,
+    "final_answer": "The Transmission Control Protocol (TCP) is a foundational protocol of the Internet protocol suite designed to provide reliable, ordered, and error-checked delivery of data between applications [Wikipedia]. To ensure this reliability before any actual data is transmitted, TCP uses a synchronization process known as the \"three-way handshake.\" This mechanism allows both the client and the server to agree upon initial communication parameters, specifically their sequence numbers, ensuring that both endpoints are ready and synchronized.\n\nThe process unfolds in three distinct steps:\n\n1. **The SYN (Synchronize) Phase:** \n   The communication begins when the client wants to establish a connection with the server. The client sends a TCP segment containing a special control flag called **SYN** and a randomly chosen initial sequence number (let's call it $Seq = X$). This packet tells the server that the client wishes to establish a connection and specifies where the client's byte numbering will start.\n\n2. **The SYN-ACK (Synchronize-Acknowledge) Phase:** \n   Upon receiving the client's SYN packet, the server acknowledges the request by sending back its own segment. This packet contains both the **SYN** and **ACK** flags. The server includes its own initial sequence number (let's call it $Seq = Y$) and an acknowledgment number set to the client's sequence number plus one ($Ack = X + 1$). This response serves a dual purpose: it informs the client that the server received its request and establishes the server's own starting sequence number while acknowledging the client's.\n\n3. **The ACK (Acknowledge) Phase:** \n   In the final step, the client receives the SYN-ACK packet from the server and responds with an **ACK** packet. The client's sequence number is now $X + 1$, and it includes an acknowledgment number confirming the server's sequence number ($Ack = Y + 1$). \n\nOnce this third step is completed, the handshake is finished, and a full-duplex, reliable connection is established. Both the client and the server have verified each other's readiness, exchanged and acknowledged their initial sequence numbers, and can now begin safely transmitting data streams knowing that any lost packets or out-of-order deliveries can be tracked and managed using these synchronized sequence numbers.",
+    "citations": [
+      "[External Knowledge (Wikipedia): Transmission Control Protocol]"
+    ],
+    "external_citations": [
+      "Transmission Control Protocol"
+    ],
+    "latency_seconds": 11.68
+  },
+  {
+    "test_number": 4,
+    "category": "4. Informal and Grammatically Incorrect",
+    "original_question": "wat is differnce btw tcp udp explain fast plzz",
+    "cleaned_question": "What is the difference between TCP and UDP? Please explain quickly.",
+    "intent": "GENERAL_KNOWLEDGE",
+    "knowledge_source": "General Technical Knowledge (Gemini)",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 0.787,
+    "support_level": "Strong support",
+    "num_steps": 1,
+    "final_answer": "**TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** are both protocols used to send data across the internet, but they handle the job in fundamentally different ways based on whether they prioritize **reliability** or **speed**.\n\nHere is the quick breakdown of the differences:\n\n*   **Connection Type:** \n    *   **TCP** is *connection-oriented*, meaning it establishes a formal connection between the sender and receiver before any data is sent. \n    *   **UDP** is *connectionless*, meaning it just fires data packets (called datagrams) at the receiver without establishing a handshake or checking if anyone is listening.\n*   **Reliability & Error Checking:** \n    *   **TCP** guarantees delivery. It numbers packets, checks for errors, and asks the sender to retransmit any lost data so that everything arrives complete and in the correct order. \n    *   **UDP** does not guarantee delivery. It performs no error correction or retransmissions, meaning packets can arrive out of order, get duplicated, or be lost entirely along the way.\n*   **Speed:** \n    *   **TCP** is slower because of the heavy overhead required to maintain connections, track packet delivery, and manage acknowledgments. \n    *   **UDP** is much faster and has minimal overhead because it wastes no time on acknowledgments or error recovery.\n*   **Best Use Cases:** \n    *   **TCP** is used when data accuracy is critical and nothing can be missing—such as web browsing (HTTP/HTTPS), sending emails (SMTP), and downloading files (FTP). \n    *   **UDP** is used when speed is more important than a few dropped pieces of data—such as live video streaming, online multiplayer gaming, and Voice over IP (VoIP) calls, where a momentary glitch is better than a delayed stream.\n\nIn short: **TCP** is slow and careful (guaranteed delivery), while **UDP** is fast and reckless (best-effort delivery). *(Note: Both protocols utilize port numbers to direct traffic to the correct network applications [Wikipedia]).*",
+    "citations": [
+      "[External Knowledge (Wikipedia): List of TCP and UDP port numbers]"
+    ],
+    "external_citations": [
+      "List of TCP and UDP port numbers"
+    ],
+    "latency_seconds": 13.17
+  },
+  {
+    "test_number": 5,
+    "category": "5. Uploaded-Document Questions",
+    "original_question": "What is her CGPA at VIT-AP University, and what rank did she secure in AP Eamcet?",
+    "cleaned_question": "What is her CGPA at VIT-AP University, and what rank did she secure in AP EAMCET?",
+    "intent": "DOCUMENT_SEARCH",
+    "knowledge_source": "Uploaded Document",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 0.819,
+    "support_level": "Strong support",
+    "num_steps": 2,
+    "final_answer": "Based on the provided resume, she achieved a CGPA of 8.99 at VIT-AP University and secured a state rank of 3,741 in the AP EAMCET.",
+    "citations": [
+      "[CHILUVURI_SAI_SRI_VAISHNAVI(Resume).pdf, Page 1]"
+    ],
+    "external_citations": [],
+    "latency_seconds": 18.43
+  },
+  {
+    "test_number": 6,
+    "category": "6. Questions Unrelated to Uploaded Documents",
+    "original_question": "What is photosynthesis and why is chlorophyll green?",
+    "cleaned_question": "What is photosynthesis and why is chlorophyll green?",
+    "intent": "GENERAL_KNOWLEDGE",
+    "knowledge_source": "General Technical Knowledge (Gemini)",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 1.0,
+    "support_level": "Strong support",
+    "num_steps": 2,
+    "final_answer": "Photosynthesis is the fundamental biological process by which plants, algae, and certain bacteria convert light energy—typically from the sun—into chemical energy to fuel their metabolic activities [External Knowledge (Wikipedia)]. During this process, these organisms take in carbon dioxide from the air and water from their environment, using absorbed sunlight to transform them into oxygen (which is released as a byproduct) and energy-rich organic compounds, primarily glucose, which serve as their food source. \n\nThe key player in capturing this light energy is a pigment called chlorophyll. Chlorophyll appears green to our eyes because of how it interacts with the visible light spectrum. It absorbs light most efficiently in the blue and red wavelengths to power photosynthesis, but it is very poor at absorbing green light. Instead, green light is mostly reflected and transmitted by the pigment, striking our eyes and giving leaves and plants their characteristic green color.",
+    "citations": [
+      "[External Knowledge (Wikipedia): Photosynthesis]",
+      "[External Knowledge (Wikipedia): Shades of green]"
+    ],
+    "external_citations": [
+      "Photosynthesis"
+    ],
+    "latency_seconds": 13.34
+  },
+  {
+    "test_number": 7,
+    "category": "7. Multi-Hop Questions (3-Hop)",
+    "original_question": "What is evaporation, what conditions make evaporation faster, and how do clouds form in the atmosphere?",
+    "cleaned_question": "What is evaporation, what conditions make evaporation faster, and how do clouds form in the atmosphere?",
+    "intent": "GENERAL_KNOWLEDGE",
+    "knowledge_source": "General Technical Knowledge (Gemini)",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 1.0,
+    "support_level": "Strong support",
+    "num_steps": 3,
+    "final_answer": "**Evaporation** is a type of vaporization that occurs on the surface of a liquid as it changes into a gas or vapor at temperatures below its boiling point [External Knowledge (Wikipedia)]. This process happens when molecules near the liquid's surface collide and transfer energy; when an individual molecule absorbs enough kinetic energy to overcome the liquid's vapor pressure, it escapes into the surrounding air as a gas [External Knowledge (Wikipedia)]. \n\nSeveral key environmental conditions influence and accelerate this process, making **evaporation faster**:\n* **Higher Temperatures:** Increased heat provides molecules with greater kinetic energy, allowing more of them to break free from the liquid surface.\n* **Greater Surface Area:** A larger exposed surface area allows more molecules direct access to the air, increasing the overall rate of escape.\n* **Lower Humidity:** When the surrounding air is dry (low humidity), it contains a low concentration of water vapor, which encourages more molecules to leave the liquid. Conversely, a high concentration of the evaporating substance in the air significantly slows down evaporation [External Knowledge (Wikipedia)].\n* **Air Movement (Wind):** Moving air sweeps away newly formed vapor molecules from the liquid's surface, preventing the surrounding air from becoming saturated and maintaining a steep concentration gradient that drives further evaporation. \n\n*(Note: When evaporation takes place, the energy removed from the remaining liquid also causes a decrease in its temperature, a phenomenon known as evaporative cooling [External Knowledge (Wikipedia)].)*\n\n**Cloud formation** in the atmosphere is a direct continuation of this moisture cycle. It begins when warm, moisture-laden air—generated largely by evaporation from oceans, lakes, and land—rises into the atmosphere. As this air ascends, it encounters lower atmospheric pressure, causing it to expand and cool. Eventually, the air cools to its dew point, meaning it can no longer hold all of its invisible water vapor. This excess vapor then condenses from a gas back into liquid water droplets or ice crystals. For this condensation to occur, the water vapor requires tiny microscopic particles suspended in the air—known as cloud condensation nuclei (such as dust, pollen, salt, or smoke)—to cling to. When billions of these microscopic water droplets and ice crystals cluster together around these nuclei, they become dense enough to form the visible structures we recognize as clouds.",
+    "citations": [
+      "[External Knowledge (Wikipedia): Evaporation]",
+      "[External Knowledge (Wikipedia): Evaporative cooler]",
+      "[External Knowledge (Wikipedia): Cloud]"
+    ],
+    "external_citations": [
+      "Evaporation"
+    ],
+    "latency_seconds": 25.62
+  },
+  {
+    "test_number": 8,
+    "category": "8. Document Evidence + External Knowledge",
+    "original_question": "What web technologies are listed in her resume, and what is the primary architectural difference between React and traditional server-rendered HTML?",
+    "cleaned_question": "What web technologies are listed in her resume, and what is the primary architectural difference between React and traditional server-rendered HTML?",
+    "intent": "HYBRID",
+    "knowledge_source": "Uploaded Document",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 0.708,
+    "support_level": "Moderate support",
+    "num_steps": 2,
+    "final_answer": "Based on the provided resume, the listed web technologies include HTML, CSS, JavaScript, React.js, and Node.js. \n\nRegarding the architectural differences, the primary distinction between React and traditional server-rendered HTML lies in where the user interface is rendered and how state is managed:\n\n* **Traditional Server-Rendered HTML:** In a traditional server-rendered architecture, the server performs the heavy lifting for every user request. It executes application logic, queries databases, and generates the complete, ready-to-display HTML markup. The server then sends this fully rendered page to the browser. Each time the user navigates to a new page or triggers a significant update, a brand-new HTML document is fetched from the server, resulting in a full-page reload.\n* **React:** React operates primarily as a client-side, component-based library (though it can also support server-side rendering via frameworks like Next.js). Instead of sending fully formed HTML pages for every interaction, the server typically sends a lightweight HTML shell accompanied by JavaScript bundles. The browser then executes the JavaScript to build and render the user interface locally using a Virtual DOM. When data changes, React efficiently updates only the specific components that need to change in the browser via DOM diffing, without requiring a full page refresh.",
+    "citations": [
+      "[CHILUVURI_SAI_SRI_VAISHNAVI(Resume).pdf, Page 1]"
+    ],
+    "external_citations": [],
+    "latency_seconds": 17.62
+  },
+  {
+    "test_number": 9,
+    "category": "9. Ambiguous Questions",
+    "original_question": "What is the best way to do it?",
+    "cleaned_question": "What is the best way to do it?",
+    "intent": "AMBIGUOUS",
+    "knowledge_source": "Uploaded Document",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 0.767,
+    "support_level": "Strong support",
+    "num_steps": 1,
+    "final_answer": "Based on the resume of Chiluvuri Sai Sri Vaishnavi, the best way to develop the **Semantic Search Engine for NCERT Textbooks** is to implement **Sentence Transformers** and **FAISS** (Facebook AI Similarity Search) for generating semantic embeddings and performing efficient similarity searches, rather than relying on traditional keyword-matching techniques. This approach ensures that the search engine understands the contextual meaning of queries and retrieves the most relevant textbook content accurately.",
+    "citations": [
+      "[CHILUVURI_SAI_SRI_VAISHNAVI(Resume).pdf, Page 1]"
+    ],
+    "external_citations": [],
+    "latency_seconds": 8.88
+  },
+  {
+    "test_number": 10,
+    "category": "10. Questions with Insufficient Evidence",
+    "original_question": "What was her exact salary as a Director of Engineering at Apple in 2023?",
+    "cleaned_question": "What was her exact salary as a Director of Engineering at Apple in 2023?",
+    "intent": "DOCUMENT_SEARCH",
+    "knowledge_source": "Uploaded Document",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 0.698,
+    "support_level": "Moderate support",
+    "num_steps": 1,
+    "final_answer": "Based on the available documents, there is no mention of an individual working as a Director of Engineering at Apple in 2023, nor are there any details regarding a salary for such a position. Therefore, that specific information is not available in the provided records.",
+    "citations": [
+      "[CHILUVURI_SAI_SRI_VAISHNAVI(Resume).pdf, Page 1]"
+    ],
+    "external_citations": [],
+    "latency_seconds": 9.5
+  },
+  {
+    "test_number": 11,
+    "category": "11. Unseen Complex Questions",
+    "original_question": "How do quantum computers utilize superposition and entanglement to solve certain optimization problems faster than classical computers?",
+    "cleaned_question": "How do quantum computers utilize superposition and entanglement to solve certain optimization problems faster than classical computers?",
+    "intent": "GENERAL_KNOWLEDGE",
+    "knowledge_source": "General Technical Knowledge (Gemini)",
+    "llm_provider": "Gemini (gemini-3.5-flash-lite)",
+    "overall_prm_score": 0.987,
+    "support_level": "Strong support",
+    "num_steps": 3,
+    "final_answer": "Quantum computers utilize the fundamental principles of quantum mechanics—specifically superposition and entanglement—to fundamentally change how information is processed, allowing them to solve certain complex optimization problems much faster than classical computers. \n\nClassical computers rely on bits that must exist in a definitive binary state of either 0 or 1, forcing them to evaluate potential solutions to an optimization problem sequentially or through brute-force enumeration. In contrast, quantum computers utilize **superposition** by allowing qubits to exist in a linear combination of multiple states simultaneously [External Knowledge]. This enables quantum processors to evaluate a vast array of possibilities at the same time, exponentially increasing their computational capacity and allowing them to explore complex solution landscapes far more efficiently than classical systems.\n\nTo complement superposition, quantum computers leverage **entanglement**, a phenomenon where pairs or groups of qubits become interconnected in such a way that the quantum state of each qubit cannot be described independently of the others [External Knowledge]. Through entanglement, operations performed on one qubit instantly influence the state of another, regardless of the physical distance between them. This allows the processor to coordinate complex, massively parallel calculations and process vast amounts of information cooperatively rather than in isolated steps.\n\nWhen combined, superposition and entanglement allow quantum computers to tackle optimization problems—such as routing, scheduling, and portfolio optimization—with unprecedented speed [External Knowledge]. While superposition drastically expands the search space by allowing the system to represent and process a massive combination of potential solutions all at once, entanglement links those qubits together so the system can evaluate the intricate, interrelated relationships among variables across the entire data set simultaneously. This cooperative and parallelized search mechanism bypasses the slow, step-by-step bottlenecks of classical computing architectures, enabling quantum algorithms to home in on optimal solutions with remarkable efficiency.",
+    "citations": [
+      "[External Knowledge (Wikipedia): Topological quantum computer]",
+      "[External Knowledge (Wikipedia): Quantum decoherence]"
+    ],
+    "external_citations": [
+      "Topological quantum computer"
+    ],
+    "latency_seconds": 38.44
+  }
+]

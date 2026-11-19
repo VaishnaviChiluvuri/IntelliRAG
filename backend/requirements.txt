@@ -1,0 +1,15 @@
+fastapi>=0.115.0
+uvicorn>=0.32.0
+python-multipart>=0.0.12
+pypdf>=5.0.0
+python-docx>=1.1.0
+numpy>=2.1.0
+faiss-cpu>=1.9.0
+sentence-transformers>=3.3.0
+transformers>=4.46.0
+torch>=2.5.0
+pydantic>=2.9.0
+rank-bm25>=0.2.2
+python-dotenv>=1.0.1
+google-genai>=2.19.0
+httpx>=0.28.0
